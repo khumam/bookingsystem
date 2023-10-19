@@ -20,7 +20,7 @@
           <div class="table-responsive mb-0 fixed-solution" data-pattern="priority-columns">
             <table class="table table-striped w-full text-left border border-gray-50 dark:border-zinc-600">
               <thead>
-                <tr class="border-b border-gray-50 dark:border-zinc-600 bg-gray-50/30 dark:bg-zinc-700/50 dark:text-zinc-100">
+                <tr class="border-b border-gray-50 dark:border-zinc-600 bg-gray-50/50 dark:bg-zinc-700/50 dark:text-zinc-100">
                   <th class="p-3">No.</th>
                   <th class="p-3">Name</th>
                   <th class="p-3">Email</th>
@@ -29,14 +29,14 @@
               </thead>
               <tbody>
                 @forelse($users as $user)
-                <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100">
+                <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 bg-white">
                   <td class="p-3" width="50">{{ $loop->iteration }}</td>
                   <td class="p-3">{{ $user->name }}</td>
                   <td class="p-3">{{ $user->email }}</td>
                   <td class="p-3">{{ $user->created_at }}</td>
                 </tr>
                 @empty
-                <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100">
+                <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 bg-red-50/50">
                   <td class="p-3 text-center" colspan="4">We can't find what you are looking for</td>
                 </tr>
                 @endforelse

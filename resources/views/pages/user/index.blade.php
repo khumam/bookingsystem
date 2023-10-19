@@ -4,7 +4,7 @@
         <x-breadcrumb-item>User management</x-breadcrumb-item>
     </x-breadcrumb>
 
-    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+    <div class="card dark:border-zinc-600 dark:bg-zinc-800 bg-slate-50">
         <div class="card-body pb-0">
             <h5 class="dark:text-zinc-100">User data</h5>
         </div>

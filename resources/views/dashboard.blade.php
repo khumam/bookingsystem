@@ -4,7 +4,7 @@
   </x-breadcrumb>
 
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-    <div class="card dark:bg-zinc-800 dark:border-zinc-600">
+    <div class="card dark:bg-zinc-800 dark:border-zinc-600 bg-slate-50">
       <div class="card-body">
         <div>
           <div class="grid grid-cols-12 gap-5 items-center">
