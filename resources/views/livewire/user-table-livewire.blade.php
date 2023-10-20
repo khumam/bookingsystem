@@ -30,8 +30,8 @@
               </thead>
               <tbody>
                 @forelse($users as $user)
-                <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 bg-white">
-                  <td class="p-3" width="50">{{ $loop->iteration }}</td>
+                <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 bg-white" wire:key="{{ $user->id }}">
+                  <td class="p-3" width="50">{{ ($users->currentpage()-1) * $users->perpage() + $loop->index + 1 }}</td>
                   <td class="p-3">{{ $user->name }}</td>
                   <td class="p-3">{{ $user->email }}</td>
                   <td class="p-3">{{ $user->created_at }}</td>
