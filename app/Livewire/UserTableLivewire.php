@@ -5,10 +5,13 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Traits\DatatableModalTrait;
 
 class UserTableLivewire extends Component
 {
     use WithPagination;
+    use DatatableModalTrait;
+
     public $showPage = 5;
     public $search = '';
 

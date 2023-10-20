@@ -25,6 +25,7 @@
                   <th class="p-3">Name</th>
                   <th class="p-3">Email</th>
                   <th class="p-3">Created at</th>
+                  <th class="p-3" width="100px">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -34,6 +35,14 @@
                   <td class="p-3">{{ $user->name }}</td>
                   <td class="p-3">{{ $user->email }}</td>
                   <td class="p-3">{{ $user->created_at }}</td>
+                  <td class="p-3 flex">
+                    <a href="{{ route('dashboard.user.edit', $user->id) }}" class="p-2 bg-amber-400 hover:bg-amber-300 rounded-tl rounded-bl">
+                        Edit
+                    </a>
+                    <button wire:click="showModal('dashboard.user.destroy', {{ $user->id }})" class="p-2 bg-rose-600 hover:bg-rose-700 rounded-tr rounded-br text-white">
+                        Delete
+                    </button>
+                  </td>
                 </tr>
                 @empty
                 <tr class="border-b border-gray-50 dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 bg-red-50/50">
@@ -48,4 +57,5 @@
     <div class="my-5">
         {{ $users->onEachSide(1)->links() }}
     </div>
+    <x-datatable.modal :isModalShow="$isModalShow" :deleteRoute="$deleteRoute"></x-datatable.modal>
 </div>

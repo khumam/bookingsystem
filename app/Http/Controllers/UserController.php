@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\UserService;
 
 class UserController extends Controller
 {
@@ -19,23 +20,16 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('pages.user.create');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, UserService $userService)
     {
-        //
+        $user = $userService::getById($id);
+        return view('pages.user.show', compact('user'));
     }
 
     /**
@@ -43,22 +37,19 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return view('pages.user.edit', compact('id'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, UserService $userService)
     {
-        //
+        try {
+            $isDeleted = $userService->deleteById($id);
+            return $isDeleted ? redirect()->route('dashboard.user.index')->with('success', 'User deleted succesfully') : redirect()->back()->with('error','Failed to delete user');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to delete user ' . $e->getMessage());
+        }
     }
 }
