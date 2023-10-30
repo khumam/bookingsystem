@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\User;
 
 use App\Models\User;
 use Livewire\Component;
@@ -27,7 +27,7 @@ class UserTableLivewire extends Component
 
     public function render()
     {
-        return view('livewire.user-table-livewire', [
+        return view('livewire.user.user-table-livewire', [
             'users' => User::where('name', 'like', '%' . $this->search . '%')->paginate($this->showPage)
         ]);
     }

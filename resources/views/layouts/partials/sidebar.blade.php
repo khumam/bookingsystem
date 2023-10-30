@@ -11,6 +11,12 @@
           </a>
         </li>
         <li>
+          <a href="{{ route('dashboard.booking.index') }}" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
+            <i data-feather="book"></i>
+            <span data-key="t-booking" class="prose"> Booking</span>
+          </a>
+        </li>
+        <li>
           <a href="{{ route('dashboard.user.index') }}" class="pl-6 pr-4 py-3 block text-sm font-medium text-gray-700 transition-all duration-150 ease-linear hover:text-violet-500 dark:text-gray-300 dark:active:text-white dark:hover:text-white">
             <i data-feather="user"></i>
             <span data-key="t-dashboard" class="prose"> User</span>

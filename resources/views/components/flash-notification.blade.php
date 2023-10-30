@@ -6,7 +6,7 @@
     @endif
     @if (session('error'))
     <div class="relative px-5 py-3 border-2 bg-red-50 text-red-700 border-red-100 rounded mb-3">
-        <p class="prose text-green-700">{{ session('error') }}</p>
+        <p class="prose text-red-700">{{ session('error') }}</p>
     </div>
     @endif
 </div>
